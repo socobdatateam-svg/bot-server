@@ -78,7 +78,7 @@ def main():
 
     # 5. UPLOAD TO DATA SHEET (IN CHUNKS)
     # REPLACE "RawData" with the actual name of your destination tab
-    DESTINATION_TAB_NAME = "RawData" 
+    DESTINATION_TAB_NAME = "socpacked_generated_data" 
     
     try:
         data_sheet = sh.worksheet(DESTINATION_TAB_NAME)
