@@ -77,7 +77,15 @@ def main():
     print(f"Data processed. Rows to upload: {total_rows}")
 
     # 5. UPLOAD TO DATA SHEET (IN CHUNKS)
-    data_sheet = sh.get_worksheet(0) # Assumes Tab 1 is the raw data
+    # REPLACE "RawData" with the actual name of your destination tab
+    DESTINATION_TAB_NAME = "RawData" 
+    
+    try:
+        data_sheet = sh.worksheet(DESTINATION_TAB_NAME)
+    except gspread.exceptions.WorksheetNotFound:
+        print(f"Error: Could not find tab named '{DESTINATION_TAB_NAME}'. Check your Sheet!")
+        return
+
     data_sheet.clear()
     
     # Upload Headers
