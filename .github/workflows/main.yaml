@@ -3,6 +3,7 @@ name: Drive to Sheet Automation
 on:
   repository_dispatch:
     types: [drive_upload_trigger]  # This matches the "Bridge" code
+    workflow_dispatch:
 
 jobs:
   build:
